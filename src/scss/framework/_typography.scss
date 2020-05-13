@@ -1,0 +1,31 @@
+@each $key, $val in $fonts {
+	@include font-face(#{map-get($val, name)}, #{map-get($val, path)}, #{map-get($val, weight)}, #{map-get($val, woff2)});
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0.75em 0 1em 0;
+	font-weight: $normal-fw;
+}
+
+@mixin headings($ratio) {
+	@for $i from (6 * -1) through -1 {
+		#{h}#{abs($i)} {
+			font-size: heading-size($i, $ratio);
+		}
+	}
+}
+
+@include headings($heading-ratio-small);
+@include breakpoint($size-switch) {
+	@include headings($heading-ratio-large);
+}
+
+p {
+	font-size: $large-fs;
+	line-height: $text-lh;
+}
+
+a {
+	transition: all 0.5s $default-easing;
+	color: $text-color;
+}

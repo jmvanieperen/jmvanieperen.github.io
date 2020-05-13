@@ -1,0 +1,55 @@
+// *
+// font-weights
+$thin-fw: 100; // thin fontweight
+$extralight-fw: 200; // extralight fontweight
+$light-fw: 300; // light fontweight
+$normal-fw: 400; // normal fontweight
+$medium-fw: 500; // medium font-weight
+$semibold-fw: 600; // semibold font-weight
+$bold-fw: 700; // bold font-weight
+$extrabold-fw: 800; // extrabold font-weight
+$ultrabold-fw: 900; // ultrabold font-weight
+
+// *
+// font-styles
+$regular-fs: normal; // normal font-style
+$italic-fs: italic; // italix font-style
+
+// *
+// ratios
+$ratio-minor-second: 15 / 14; // minor second
+$ratio-major-second: 9 / 8; // major second
+$ratio-minor-third: 6 / 5; // minor third
+$ratio-major-third: 5 / 4; // major third
+$ratio-perfect-fourth: 4 / 3; // perfect fourth
+$ratio-augmented-fourth: sqrt(2); // augmented fourth
+$ratio-perfect-fifth: 3 / 2; // perfect fifth
+$ratio-golden-ratio: (1 + sqrt(5)) / 2; // golden ratio
+
+// *
+// easings
+$ease-in-out: ease-in-out; // ease in out
+$ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715); // ease in sine
+$ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1); // ease out sine
+$ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95); // ease in out sine
+$ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53); // ease in quad
+$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94); // ease out quad
+$ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955); // ease in out quad
+$ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19); // ease in cubic
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1); // ease out cubic
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1); // ease in out cubic
+$ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22); // ease in quart
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1); // ease out quart
+$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1); // ease in out quart
+$ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06); // ease in quint
+$ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1); // ease out quint
+$ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1); // ease in out quint
+$ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035); // ease in expo
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1); // ease out expo
+$ease-in-out-expo: cubic-bezier(1, 0, 0, 1); // ease in out expo
+$ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335); // ease in circ
+$ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1); // ease out circ
+$ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86); // ease in out circ
+$ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045); // ease in back
+$ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275); // ease out back
+$ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55); // ease in out back

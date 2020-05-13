@@ -1,0 +1,119 @@
+// *
+// pixel-to-rem
+@function rem($size, $context: $standard-remsize) {
+	@return ($size / ($context / ($context * 0 + 1))) + rem;
+}
+
+// *
+// square root
+@function sqrt($r) {
+	$x0: 1;
+	$x1: $x0;
+
+	@for $i from 1 through 10 {
+		$x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+		$x0: $x1;
+	}
+
+	@return $x1;
+}
+
+// *
+// create heading sizes
+@function heading-size($i, $size) {
+	$heading-list: 1em;
+
+	@for $n from 1 through 5 {
+		$new: nth($heading-list, length($heading-list)) * $size;
+		$heading-list: append($heading-list, $new);
+	}
+
+	@return nth($heading-list, $i);
+}
+
+// *
+// deep get for sass-maps
+@function map-deep-get($map, $keys...) {
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
+
+	@return $map;
+}
+
+// *
+// font concat for variables
+@function font-variable($name){
+	$keys: map-keys($fonts);
+	$i: index($keys, $name);
+	$font-name: map-deep-get($fonts, #{nth($keys, $i)}, name);
+	$font-fallbacks: map-deep-get($fonts, #{nth($keys, $i)}, fallbacks);
+
+	@return $font-name, $font-fallbacks;
+}
+
+// *
+// create readable breakpoints
+@mixin breakpoint($point, $points: $breakpoints) {
+	@if map-has-key($points, $point) {
+		$point: map-get($points, $point);
+	}
+	@media screen and (min-width: #{$point}) {
+		@content;
+	}
+}
+
+// *
+// font import
+@mixin font-face($font-family, $path, $weight: $normal-fw, $woff2available: null) {
+	@font-face {
+		font-family: '#{$font-family}';
+		font-weight: $weight;
+		@if $woff2available == 'true' {
+			src: 	url('#{$path}.woff2') format('woff2'),
+					url('#{$path}.woff') format('woff');
+		} @else {
+			src: 	url('#{$path}.woff') format('woff');
+		}
+	}
+}
+
+// *
+// clearfix for floating elements
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: ' ';
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+// *
+// adds viewport indicator
+@mixin debug() {
+	position: relative;
+
+	&:before {
+		$points: xs, sm, md, lg, xl, xxl;
+		content: 'xs';
+		position: fixed;
+		top: $small-spacing;
+		left: $small-spacing;
+		z-index: 9999;
+		background-color: $code-block-color;
+		border-radius: $small-radius;
+		opacity: 0.5;
+		min-width: $small-spacing * 3.5;
+		padding: $small-spacing / 2 $normal-spacing / 2;
+		text-align: center;
+		@for $i from 1 through (length($points) - 1) {
+			@include breakpoint(nth($points, $i)) {
+				content: quote(nth($points, ($i + 1)));
+			}
+		}
+	}
+}

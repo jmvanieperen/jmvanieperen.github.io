@@ -1,0 +1,97 @@
+// *
+// em- and remsizes
+$standard-remsize: 16px;
+$small-emsize: $standard-remsize;
+$normal-emsize: 18px;
+
+// *
+// breakpoints, size-switch and debugmode
+$breakpoints: (
+	xs: 480px,
+	sm: 768px,
+	md: 992px,
+	lg: 1200px,
+	xl: 1440px
+);
+$size-switch: map-get($breakpoints, sm); // switch (breakpoint) to smaller layout and styles\
+$debugmode: false; // adds viewport indicator (set to false if not needed)
+
+// *
+// spacing
+$small-spacing: 1rem;
+$normal-spacing: $small-spacing * 1.5;
+$large-spacing: $normal-spacing * 2;
+
+// *
+// border and border-radius
+$normal-border: rem(1); // 1px border-width
+$large-border: rem(3); // 3px border-width
+$small-radius: rem(3); // 3px radius
+$large-radius: rem(10); // 10px radius
+
+// *
+// easing
+$default-easing: $ease-in-out;
+$extra-easing: $ease-in-out-quint;
+
+// *
+// your specific colors - use colornaming (http://chir.ag/projects/name-that-color)
+$white: #ffffff;
+$gray-nurse: #e6ebe6;
+$cod-gray: #141414;
+$mine-shaft: #333333;
+$gothic: #7a92a5;
+$blue-smoke: #798c84;
+$bleu-bayoux: #566c7b;
+$gallery: #ededed;
+
+// *
+// default colors - in order for this framework to work, fill these with your specific colors
+$background-color-light: $gray-nurse;
+$background-color-dark: $cod-gray;
+$text-color-light: $mine-shaft;
+$text-color-dark: $gothic;
+$lighter-color-light: $blue-smoke;
+$lighter-color-dark: $bleu-bayoux;
+$text-color: $text-color-light;
+$selection-text-color-light: $lighter-color-light;
+$selection-text-color-dark: $lighter-color-dark;
+//$dot-color: $gallery;
+
+// *
+// font(s) to include
+$fonts: (
+	primary: (
+		name: 'Karla',
+		path: '../fonts/karla',
+		woff2: true, // set to false if not available
+		weight: 400,
+		fallbacks: ('HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif)
+	),
+	secondary: (
+		name: 'Karla',
+		path: '../fonts/karla-bold',
+		woff2: true, // set to false if not available
+		weight: 700,
+		fallbacks: ('HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif)
+	)
+);
+
+// *
+// typography
+$primary-font: font-variable(primary);
+
+$small-fs: 0.8em; // small font-size
+$normal-fs: 1em; // normal font-size
+$large-fs: 1.125em; // large font-size
+
+$normal-lh: 1.5; // normal line-height
+$text-lh: 1.65; // text line-height
+$large-lh: 1.8; // large line-height
+
+$heading-ratio-small: $ratio-major-second; // small screen heading ratio
+$heading-ratio-large: $ratio-minor-third; // large screen heading ratio (can be equal to small screen heading ratio)
+
+// Dimensions
+$dot-size: 2px;
+$dot-space: 22px;
